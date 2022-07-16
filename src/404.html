@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+	"title":"Nordisk Maskin - 404"
+})
+<body>
+	@@include('html/_preloader-markup.htm',{})
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page page_404">
+			<nav class="breadcrumbs">
+				<div class="breadcrumbs__container">
+					<div class="breadcrumbs__content">
+						<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+							<li itemscope itemtype="http://schema.org/ListItem">
+								<a class="breadcrumbs__link" itemprop="item" href="index.html">
+									<img src="img/interface/home.svg" alt="home">
+								</a>
+								<meta itemprop="position" content="1" />
+							</li>
+							<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								<span class="breadcrumbs__link" itemprop="name">404</span>
+								<meta itemprop="position" content="2" />
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="notfound__container">
+				<h1>404</h1>
+				<a href="index.html" class="button">homepage</a>
+			</div>
+		</main>
+		@@include('html/_footer.htm',{})
+		@@include('html/_js.htm',{})
+	</div>
+</body>
+</html>

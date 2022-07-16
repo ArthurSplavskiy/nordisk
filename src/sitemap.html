@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Sitemap</title>
+		<meta name="description" content="Nordisk Maskin">
+		<meta name="keywords" content="Nordisk Maskin, Description">
+		<meta property="og:locale" content="[locale]" />
+	    <meta property="og:title" content="Nordisk Maskin" />
+	    <meta property="og:description" content="Tech" />
+	    <meta property="og:url" content="[url]" />
+	    <meta property="og:image" content="img/favicons/opengraph.jpg"/>
+	    <meta property="og:image:width" content="1200"/>
+	    <meta property="og:image:height" content="630"/>
+	    <meta name="twitter:card" content="summary_large_image"/>
+	    <link type="image/x-icon" rel="shortcut icon" href="img/favicons/favicon-16x16.png">
+	    <link type="image/png" sizes="16x16" rel="icon" href="img/favicons/favicon-16x16.png">
+	    <link type="image/png" sizes="32x32" rel="icon" href="img/favicons/favicon-32x32.png">
+	    <link type="image/png" sizes="48x48" rel="icon" href="img/favicons/favicon-48x48.png">
+	    <link sizes="180x180" rel="apple-touch-icon" href="img/favicons/apple-touch-icon-180x180.png">
+	    <link color="#088ECB" rel="mask-icon" href="img/favicons/safari-pinned-tab-16x16.svg">
+	    <meta name="msapplication-TileColor" content="#088ECB">
+	    <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
+		<meta name="application-name" content="Nordisk Maskin">
+		<meta name="theme-color" content="#000000">
+		<meta name="msapplication-config" content="others/browserconfig.xml">
+		<link rel="manifest" crossorigin="use-credentials" href="others/manifest.json">
+		@@include('html/_preloader-style.htm')
+	</head>
+	<body>
+		@@include('html/_preloader-markup.htm')
+		<div class="rootpage">
+			<h1>Front-end - Nordisk Maskin</h1>
+			<h6>Pages:</h6>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="index.html">Main</a></li>
+			</ol>
+			<button>Popup</button>
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+		<script>
+			const popup = {
+				open(selector) {
+					document.querySelector(selector).classList.add('_open');
+				},
+				close(e, selector) {
+					e.target.closest(selector).closest('.popup').classList.remove('_open');
+				}
+			};
+			const clickOnDocument = (e) => {
+				const targetElement = e.target;
+				if (targetElement.closest('.popup__close')) {
+					popup.close(e, '.popup__close');
+				}
+				if (targetElement.closest('.popup') && !targetElement.closest('.popup__content')) {
+					popup.close(e, '.popup');
+				}
+			};
+			document.querySelector('button').onclick = () => popup.open('.popup');
+
+			document.addEventListener('click', clickOnDocument)
+		</script>
+	</body>
+	
+	<style>
+		* ,*::before, *::after {
+			padding: 0px;
+			margin: 0px;
+			border: 0px;
+			box-sizing: border-box; 
+		}
+		.rootpage {
+			padding: 40px;
+		}
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			min-width: 320px;
+			width: 100%;
+			color: #000;
+		}
+		body {
+			font-size: 100%;
+			line-height: 1;
+			font-size: 1rem;
+		}
+		h1 {
+			font-size: 48px;
+			font-weight: 700;
+			margin-bottom: 40px;
+		}
+		h6 {
+			font-size: 28px;
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+		ol {
+			margin: 45px;
+			font-size: 28px;
+		}
+		li {
+			margin-bottom: 10px;
+		}
+		li a {
+			color: #47749E;
+			text-decoration: underline!important;
+		}
+		li a:hover {
+			text-decoration: none!important;
+		}
+		button {
+			padding: 10px 20px;
+			border: 1px solid #000;
+		}
+	</style>
+</html>

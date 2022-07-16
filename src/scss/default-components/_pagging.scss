@@ -1,0 +1,73 @@
+.pagination {
+	@extend %flex-center;
+	margin: 50px auto 50px auto;
+	@media (max-width: $mobile) {
+		margin: 50px auto 30px auto;
+	}
+	
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(5, 35px);
+		gap: 20px;
+		align-items: center;
+		justify-content: center;
+		list-style: none;
+		@media (max-width: 375px) {
+			gap: 12px;
+			grid-template-columns: repeat(5, 36px);
+		}
+	}
+	&__item {
+
+		a, span {
+			@extend %flex-center;
+			background: #FFFFFF;
+			width: 35px;
+			height: 35px;
+			border: 1px solid #E4E4E4;
+			border-radius: 4px;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 22px;
+			text-align: center;
+			color: #4D4D4D;
+			transition: $defaultTransition;
+			&:hover {
+				border-color: #171717;
+			}
+		}
+		
+		&._active span {
+			font-weight: 700;
+			border: 1.5px solid #171717;
+			color: #222222;
+		}
+	}
+	&__button {
+		@extend %flex-center;
+		width: 35px;
+		height: 35px;
+		background: #54AB59;
+		box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+		border-radius: 4px;
+		margin-right: 16px;
+		transition: $defaultTransition;
+		&:hover {
+			filter:	brightness(0.8);
+		}
+		svg {
+			width: 8px;
+			height: 16px;
+			stroke: $white;
+		}
+	}
+	&__dots {
+		@extend %flex-center;
+		width: 50px;
+		height: 50px;
+		@media (max-width: 375px) {
+			width: 36px;
+			height: 36px;
+		}
+	}
+}

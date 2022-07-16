@@ -1,0 +1,142 @@
+.select {
+	&._select-open {
+		.select__value:before {
+			transform: rotate(-270deg);
+		}
+		.select__title {
+			border-radius: 4px 4px 0 0;
+		}
+	}
+	&._error {
+		.select__title {
+			border-color: $red;
+		}
+	}
+	&._select-active {
+		.select__content {
+			color: #25221D;
+		}
+	}
+}
+.select {
+	position: relative;
+	line-height: 1;
+
+	&__content {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+		color: #B1B1B1;
+	}
+	&__row {
+		display: grid;
+		grid-template-columns: 24px auto;
+		gap: 10px;
+		align-items: center;
+	}
+	&__asset {
+		width: 24px;
+		height: 24px;
+	}
+	// .select__item
+	&__item {
+		position: relative;
+	}
+	// .select__title
+	&__title {
+		width: 100%;
+		height: 48px;
+		background: $white;
+		padding: 7px 17px 8px 20px;
+		border-radius: 24px;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 20px;
+		color: #25221D;
+		cursor: pointer;
+		background: #FFFFFF;
+		border: 1px solid #B1B1B1;
+		border-radius: 4px;
+		@media (max-width: $tablet) {
+			height: 36px;
+		}
+	}
+	// .select__value
+	&__value {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		span {
+			height: auto;
+			overflow: hidden;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+		}
+		&:before {
+			content: '';
+			display: block;
+			width: 20px;
+			height: 20px;
+			background: url('../img/interface/calendar-arrow.svg');
+			background-size: 30%;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: all 0.3s ease 0s;
+			transform: rotate(-90deg);
+			margin-left: 10px;
+		}
+	}
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		height: 100%;
+	}
+	// .select__options
+	&__options {
+		color: $white;
+		display: none;
+		position: absolute;
+		top: 47px;
+		border-radius: 0 0 4px 4px;
+		min-width: 100%;
+		left: 0;
+		border: 2px solid $white;
+		padding: 13px 0px 15px 0px;
+		z-index: 2;
+		background: $white;
+		border: 1px solid #BCBCBC;
+		box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.08);
+		overflow: hidden;
+		@media (max-width: $tablet) {
+			top: 35px;
+		}
+	}
+	// .select__option
+	&__option {
+		width: 100%;
+		display: block;
+		cursor: pointer;
+		padding: 0 15px;
+		color: #25221D;
+		text-align: left;
+		&:not(:last-child) {
+			margin-bottom: 6px;
+		}
+		&:hover {
+			color: #47749E;
+		}
+		&[hidden] {
+			color: #47749E;
+			background: #F5F5F5;
+		}
+	}
+	&__text {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 20px;
+		display: inline-flex;
+		white-space: nowrap;
+	}
+}

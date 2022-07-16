@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+		"title":"Nordisk Maskin"
+	})
+	<body>
+		@@include('html/_preloader-markup.htm',{})
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="bredcrumbs__container">
+					<nav class="breadcrumbs">
+						<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+							<li itemscope itemtype="http://schema.org/ListItem">
+								<a class="breadcrumbs__link" itemprop="item" href="index.html">
+									<img src="img/interface/home-ico.svg" alt="home">
+								</a>
+								<meta itemprop="position" content="1" />
+							</li>
+							<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								<a class="breadcrumbs__link" itemprop="name" href="catalog.html">Our products</a>
+								<meta itemprop="position" content="2" />
+							</li>
+							<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								<span class="breadcrumbs__link" itemprop="name">Wheel Loader - Accessories</span>
+								<meta itemprop="position" content="3" />
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="products-layout">
+					<div class="products-layout__container">
+						<div class="products-layout__content">
+							<h1 class="products-layout__heading">Wheel Loader - Accessories</h1>
+							<div class="products-layout__mobile-btns">
+								<button data-filter-btn>
+									<img src="img/interface/filter-ic.svg" alt="filter">
+									<span>Filter</span>
+								</button>
+								<form action="#" class="filter-form">
+									<select name="form[]" class="form">
+										<option value="">Sort by</option>
+										<option value="1">default</option>
+										<option value="2">by popularity</option>
+										<option value="3">on novelties</option>
+										<option value="4">on discounts</option>
+									</select>
+								</form>
+							</div>
+							<aside class="products-layout__aside filter" data-filter>
+								<div class="filter__heading">
+									<button data-filter-close><img src="img/interface/back-arrow.svg" alt="back"></button>
+									<span>Filters</span>
+								</div>
+								<div data-spollers class="spollers">
+									<div class="spollers__item">
+										<button type="button" data-spoller class="spollers__title _spoller-active">Brends</button>
+										<div class="spollers__body" style="display: block;">
+											<form action="#" class="filter-form">
+												<fieldset class="filter-form__field">
+													<div class="checkbox">
+														<label class="checkbox__text">
+															<input type="checkbox" name="agreement1" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>Johnson & Johnson</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">233</mark>
+												</fieldset>
+												<fieldset class="filter-form__field">
+													<div class="checkbox">
+														<label class="checkbox__text">
+															<input type="checkbox" name="agreement2" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>eBay 1</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">412</mark>
+												</fieldset>
+												<fieldset class="filter-form__field">
+													<div class="checkbox">
+														<label class="checkbox__text">
+															<input checked type="checkbox" name="agreement3" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>Johnson & Johnson</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">23 153</mark>
+												</fieldset>
+												<fieldset class="filter-form__field">
+													<div class="checkbox">
+														<label class="checkbox__text">
+															<input type="checkbox" name="agreement4" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>The Walt Disney Company</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">312</mark>
+												</fieldset>
+												<fieldset class="filter-form__field">
+													<div class="checkbox">
+														<label class="checkbox__text">
+															<input type="checkbox" name="agreement5" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>MasterCard</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">543</mark>
+												</fieldset>
+												<fieldset class="filter-form__field">
+													<div class="checkbox">
+														<label class="checkbox__text">
+															<input type="checkbox" name="agreement6" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>Facebook</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">87</mark>
+												</fieldset>
+												<fieldset class="filter-form__field">
+													<div class="checkbox">
+														<label class="checkbox__text">
+															<input type="checkbox" name="agreement7" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>Louis Vuitton</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">324</mark>
+												</fieldset>
+												<fieldset class="filter-form__field">
+													<div class="checkbox _disabled">
+														<label class="checkbox__text">
+															<input type="checkbox" name="agreement8" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>eBay 2</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">534</mark>
+												</fieldset>
+											</form>
+										</div>
+									</div>
+									<div class="spollers__item">
+										<button type="button" data-spoller class="spollers__title">Material</button>
+										<div class="spollers__body">
+											<form action="#" class="filter-form">
+												<fieldset class="filter-form__field">
+													<div class="checkbox">
+														<label class="checkbox__text">
+															<input type="checkbox" name="agreement1" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>Abstergo</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">4</mark>
+												</fieldset>
+												<fieldset class="filter-form__field">
+													<div class="checkbox">
+														<label class="checkbox__text">
+															<input type="checkbox" name="agreement2" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>Big Kahuna Burger</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">6</mark>
+												</fieldset>
+												<fieldset class="filter-form__field">
+													<div class="checkbox">
+														<label class="checkbox__text">
+															<input checked type="checkbox" name="agreement3" class="checkbox__input">
+															<div class="icon-check"></div>
+															<span>Barone</span>
+														</label>
+													</div>
+													<mark class="products-layout__count">2</mark>
+												</fieldset>
+											</form>
+										</div>
+									</div>
+									<div class="spollers__item">
+										<button type="button" data-spoller class="spollers__title">Size</button>
+										<div class="spollers__body"></div>
+									</div>
+									<div class="spollers__item">
+										<button type="button" data-spoller class="spollers__title">Price</button>
+										<div class="spollers__body">
+											<form action="#" class="price-form">
+												<fieldset class="price-form__inputs">
+													<label>
+														<input type="text" value="100">
+													</label>
+													<label>
+														<input type="text" value="2870">
+														<span>$</span>
+													</label>
+												</fieldset>
+												<button type="submit">ok</button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</aside>
+							<div class="products-layout__body">
+								<div class="filter-btns">
+									<form action="#" class="tags-form">
+										<div class="tags-form__tag">
+											<span>Johnson & Johnson</span>
+											<button type="submit">
+												<img data-src="img/interface/close.svg" data-inline-svg alt="remove">
+											</button>
+										</div>
+										<div class="tags-form__tag">
+											<span>Barone</span>
+											<button type="submit">
+												<img data-src="img/interface/close.svg" data-inline-svg alt="remove">
+											</button>
+										</div>
+										<button type="submit" class="tags-form__clear">Clear all</button>
+									</form>
+									<form action="#" class="filter-desktop-form">
+										<button type="submit" class="current">default</button>
+										<button type="submit">by popularity</button>
+										<button type="submit">on novelties</button>
+										<button type="submit">on discounts</button>
+									</form>
+								</div>
+								<div class="products-layout__grid">
+
+
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/19.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/20.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<div class="product-card__tag">-4%</div>
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/21.png" data-lazy alt="Steelwrist Tiltrotator X07">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Rototilt</span>
+												<a href="product.html" class="product-card__title">Steelwrist Tiltrotator X07</a>
+												<div class="product-card__price">
+													<span class="product-card__old">$ 400,00</span>
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/22.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+
+									<div class="product-card">
+										<div class="product-card__content">
+											<div class="product-card__tag">-4%</div>
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/23.png" data-lazy alt="Steelwrist Tiltrotator X07">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Rototilt</span>
+												<a href="product.html" class="product-card__title">Steelwrist Tiltrotator X07</a>
+												<div class="product-card__price">
+													<span class="product-card__old">$ 400,00</span>
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/24.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/25.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/26.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/27.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/28.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/29.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<div class="product-card__tag">-4%</div>
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/30.png" data-lazy alt="Steelwrist Tiltrotator X07">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Rototilt</span>
+												<a href="product.html" class="product-card__title">Steelwrist Tiltrotator X07</a>
+												<div class="product-card__price">
+													<span class="product-card__old">$ 400,00</span>
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/31.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<div class="product-card__tag">-4%</div>
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/32.png" data-lazy alt="Steelwrist Tiltrotator X07">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Rototilt</span>
+												<a href="product.html" class="product-card__title">Steelwrist Tiltrotator X07</a>
+												<div class="product-card__price">
+													<span class="product-card__old">$ 400,00</span>
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/33.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/34.png" data-lazy alt="Engcon - Ground vibrator">
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+
+
+								</div>
+								@@include('html/_pagination.htm',{})
+								<section class="s-text">
+									<div class="s-text__content">
+										<h2>Title H2</h2>
+										<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis
+											enim velit
+											mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+										<h3>Title H3</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+											dolore magna
+											aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis
+											aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+											Excepteur sint
+											occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem
+											ipsum dolor sit
+											amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+											enim ad minim
+											veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+											irure dolor in
+											reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+											cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			@@include('html/_fixtip.htm',{})
+			@@include('html/_footer.htm',{})
+			@@include('html/_js.htm',{})
+		</div>
+	</body>
+</html>

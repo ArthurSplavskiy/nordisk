@@ -1,0 +1,34 @@
+[data-subtrigger] {
+    display: flex;
+	align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &._active {
+        [data-subtarget] {
+            transform: translate3d(0px, 5px, 0px);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        [data-subarrow] {
+            transform: rotate(-180deg);
+        }
+    }
+    [data-subtarget] {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+		visibility: hidden;
+        overflow: auto;
+        transform: translate3d(0px, 15px, 0px);
+        pointer-events: none;
+        transition: all 0.3s ease;
+        width: max-content;
+    }
+    [data-subarrow] {
+        transition: transform 0.3s ease;
+        margin-left: em(8);
+    }
+}

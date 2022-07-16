@@ -1,0 +1,57 @@
+// Базовые стили спойлеров
+// Сниппет (HTML): spoller
+
+// Блок со спойлерами
+.spollers {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 26px;
+}
+// Заголовок спойлера
+.spollers__title {
+	width: 100%;
+	cursor: default;
+	text-align: left;
+	padding-bottom: 16px;
+	position: relative;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 24px;
+	transition: $defaultTransition;
+	&:hover {
+		color: #418FDC;
+	}
+	._spoller-init & {
+		cursor: pointer;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 50%;
+			background-color: #000;
+			height: 2px;
+			width: 8px;
+			transition: transform 0.5s ease 0s;
+		}
+		&::before {
+			transform: translate(-75%, -50%) rotate(40deg) scaleX(1.2);
+		}
+		&::after {
+			transform: translate(0, -50%) rotate(-40deg) scaleX(1.2);
+		}
+		&._spoller-active {
+			&::before {
+				transform: translateX(-75%) rotate(-40deg) scaleX(1.2);
+			}
+			&::after {
+				transform: rotate(40deg) scaleX(1.2);
+			}
+		}
+	}
+}
+.spollers__body {
+	@include scrollbars(2px, #444444, #B1B1B1, 8px);
+	max-height: 320px;
+	overflow-y: auto;
+}

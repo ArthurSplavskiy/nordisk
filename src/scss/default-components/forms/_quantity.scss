@@ -1,0 +1,51 @@
+.quantity {
+	height: rem(32);
+	display: flex;
+	max-width: rem(120);
+
+	&__button {
+		flex: 0 0 rem(32);
+		position: relative;
+		border-radius: 100%;
+		//border: 1px solid $medium-grey;
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transition: all 0.3s ease 0s;
+			margin: 0px 0px 0px -4.5px;
+			//background-color: $woodsmoke;
+			width: 9px;
+			height: 1px;
+			//color: $woodsmoke;
+		}
+		&:hover {
+			&::before,
+			&::after {
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+		}
+		// .quantity__button_plus
+		&_plus {
+			&::before {
+				transform: rotate(-90deg);
+			}
+		}
+		// .quantity__button_minus
+		&_minus {
+		}
+	}
+	// .quantity__input
+	&__input {
+		flex: 1 1 auto;
+		input {
+			height: 100%;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

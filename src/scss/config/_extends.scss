@@ -1,0 +1,146 @@
+// Шаблоны (заготовки)
+// @extend %имя шаблона;
+// Сниппет (SCSS): ex
+
+// Счетчик для списка
+%listCounter {
+	list-style-type: none;
+	counter-reset: item;
+	li {
+		position: relative;
+		&:before {
+			counter-increment: item;
+			content: "0" counter(item); // "0" - add something
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+// Адаптивное видео
+%responsiveVideo {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-bottom: 56.25%;
+	video,
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+// Видео в качестве фона
+%videoBackground {
+	video,
+	iframe,
+	object,
+	embed {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		transform: translateX(-50%) translateY(-50%);
+		background-size: cover;
+	}
+}
+// Серый фильтр
+%grayfilter {
+	transition: all 0.3s ease 0s;
+	filter: grayscale(1);
+	&:hover {
+		filter: grayscale(0);
+	}
+}
+// Отменить выделение
+%noselect {
+	user-select: none;
+}
+// Зеркальное отображение
+%mirror {
+	transform: scale(-1, 1);
+}
+// Плавный скролл
+%smoothscroll {
+	-webkit-overflow-scrolling: touch;
+}
+// Скрыть скролл
+%hidescroll {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+%flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+%flex-sb {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+%absolute-center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+%cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+%text-inherit {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: inherit;
+}
+%text-dots {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+%underline-link {
+	position: relative;
+	
+	&:before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 1px;
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		background: #343A40;
+		transform-origin: 100% 0;
+		transform: scaleX(0);
+		transition: transform 0.5s ease;
+	}
+
+	&:hover:before {
+		transform-origin: 0 0;
+		transform: scaleX(1);
+	}
+}
+%page-link {
+	color: #47749E;
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}

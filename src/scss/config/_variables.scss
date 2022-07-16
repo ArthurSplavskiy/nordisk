@@ -1,0 +1,67 @@
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+
+// * * * Default font
+$defaultFontFamily: "SegoeUI", Arial, Helvetica, sans-serif;
+$secondFontFamily: Arial, Helvetica, sans-serif;
+
+$fontSize: rem(16); // где 16(px) - размер шрифта по умолчанию из макета
+
+// * * * Settings
+// * Page minimal width
+$minWidth: 320;
+// * Frame width (maket)
+$maxWidth: 1440;
+// * Page container width (0 = without container)
+$maxWidthContainer: 1412;
+$maxWidthContainerPX: 1412px;
+// * Container padding
+// (30 = 15px left and right, 0 = without padding)
+$containerPadding: 28;
+$containerPaddingPX: 28px;
+// * Adaptive type:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+// Ширина страбатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding; // 1256
+$containerWidthPX: $maxWidthContainer + $containerPadding + px; // 1256
+// * Breakpoinds
+$fullHd: em(1920);
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+// * * * Colors
+// * Main text color
+$white: #FFFFFF;
+$black: #000000;
+$primary: #54AB59;
+$text-color: #444444;
+$red: #EA3C24;
+$orange: #DC6741;
+
+// * Blur
+$blurValue: 69px;
+
+// * trabsition
+$defaultTransition: 0.4s ease;
+
+// * header heights
+$mobileHeaderHeight: 58px;
+
+// * z-indexes
+$z-indexes: (
+	'filter',
+	'header-btns',
+	'page-menu',
+	'header',
+	'fixtip',
+	'wrapper'
+);
