@@ -1,1 +1,23 @@
-.page {}
+.page {
+	&_catalog, 
+	&_category,
+	&_search,
+	&_product {
+		background: #F5F5F5;
+	}
+	&_product {
+
+		.s-text {
+			margin-top: 40px;
+			&__content {
+				display: grid;
+				grid-template-columns: 1fr 460px;
+				column-gap: 15px;
+				row-gap: 30px;
+				@media (max-width: $tablet) {
+					grid-template-columns: 1fr;
+				}
+			}
+		}
+	}
+}

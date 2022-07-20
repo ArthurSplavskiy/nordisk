@@ -3,7 +3,7 @@ import './core/utils/inline-svg.js';
 import './core/utils/sliders.js';
 import './core/scroll/lazyload.js';
 import './core/forms/select.js';
-import { formFieldsInit, formSubmit } from './core/forms/forms.js';
+import { formFieldsInit, formSubmit, formQuantity } from './core/forms/forms.js';
 import { isTarget, spollers, removeClasses, _slideUp, bodyLockStatus, bodyLockToggle, tabs } from './core/utils/functions.js';
 
 const $fixtips = document.querySelector('[data-fixtips]');
@@ -11,6 +11,7 @@ const $anchor = document.querySelector('[data-anchor]');
 const $headerMenu = document.querySelector('[data-mobile-menu]');
 const $pageBurgerEl = document.querySelector('[data-burger]');
 const $filter = document.querySelector('[data-filter]');
+const $card = document.querySelector('[data-card]');
 
 export const popup = {
 	open (selector) {
@@ -96,6 +97,48 @@ const clickOnDocument = (e) => {
 	if ($filterClose) {
 		$filter && $filter.classList.remove('js-open');
 	}
+
+	const $quantityPlus = isTarget(targetElement, '.quantity__button_plus')
+	const $quantityMinus = isTarget(targetElement, '.quantity__button_minus')
+	if ($quantityPlus) {
+		const $quantity = $quantityPlus.closest('.quantity');
+		const $quantityInput = $quantityPlus.closest('.quantity').querySelector('input');
+		let value = parseInt($quantityInput.value);
+		$quantityInput.value = ++value;
+		if (value > 1) {
+			$quantity.classList.remove('_disabled');
+		} else {
+			$quantity.classList.add('_disabled');
+		}
+	}
+	if ($quantityMinus) {
+		const $quantity = $quantityMinus.closest('.quantity');
+		const $quantityInput = $quantityMinus.closest('.quantity').querySelector('input');
+		let value = parseInt($quantityInput.value);
+		value > 1 ? $quantityInput.value = --value : value;
+		if (value > 1) {
+			$quantityInput.value = --value;
+			$quantity.classList.remove('_disabled');
+		} else {
+			$quantity.classList.add('_disabled');
+		}
+	}
+
+	const $cardOpenTrigger = isTarget(targetElement, '[data-card-open]');
+	if($cardOpenTrigger) {
+		$card && $card.classList.add('js-open');
+		if (bodyLockStatus) {
+			bodyLockToggle();
+		}
+	}
+
+	const $cardCloseTrigger = isTarget(targetElement, '[data-card-close]');
+	if($cardCloseTrigger) {
+		$card && $card.classList.remove('js-open');
+		if (bodyLockStatus) {
+			bodyLockToggle();
+		}
+	}
 };
 
 const setCopyrightYear = (el) => {
@@ -180,6 +223,7 @@ const init = () => {
 	const $html = document.documentElement;
 	const $searchForm = document.querySelector('[data-search]');
 	const $parallaxItems = document.querySelectorAll('[data-parallax]');
+	const $quantities = document.querySelectorAll('.quantity');
 
 	$html.classList.add('loaded');
 	
@@ -189,8 +233,11 @@ const init = () => {
 	formSubmit(true);
 	tabs();
 
-	if($searchForm) {
+	if ($searchForm) {
 		searchProducts($searchForm);
+	}
+	if ($quantities) {
+		$quantities.forEach(quantity => quantity.classList.add('_disabled'));
 	}
 
 	$parallaxItems.forEach(image => image.addEventListener('mousemove', setParallaxOnImage));

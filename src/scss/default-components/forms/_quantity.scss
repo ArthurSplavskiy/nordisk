@@ -3,11 +3,20 @@
 	display: flex;
 	max-width: rem(120);
 
+	&._disabled {
+		.quantity__button_minus {
+			pointer-events: none;
+			&::before,
+			&::after {
+				background: #E4E4E4;
+			}
+		}	
+	}
+
 	&__button {
 		flex: 0 0 rem(32);
 		position: relative;
 		border-radius: 100%;
-		//border: 1px solid $medium-grey;
 		cursor: pointer;
 
 		&::before,
@@ -18,10 +27,8 @@
 			left: 50%;
 			transition: all 0.3s ease 0s;
 			margin: 0px 0px 0px -4.5px;
-			//background-color: $woodsmoke;
 			width: 9px;
 			height: 1px;
-			//color: $woodsmoke;
 		}
 		&:hover {
 			&::before,

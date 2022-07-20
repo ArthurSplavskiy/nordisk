@@ -51,7 +51,13 @@
 			}
             a {
                 white-space: nowrap;
+				min-width: 13px;
             }
+			img {
+				flex: 0 0 13px;
+				width: 13px;
+				height: 14px;
+			}
 		}
 	}
 }

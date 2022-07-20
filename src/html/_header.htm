@@ -351,13 +351,13 @@
 					</div>
 				</form>
 				<div class="cart-link">
-					<a href="#" class="cart-link__icon" data-da=".header-btns__content, 991.98, 0">
+					<a href="#" class="cart-link__icon" data-da=".header-btns__content, 991.98, 0" data-card-open>
 						<img src="img/interface/shopping-cart.svg" alt="shopping cart">
 						<span>19</span>
 					</a>
 					<div class="cart-link__content">
 						<p class="cart-link__amount">For the amount <span>$ 13 610</span></p>
-						<a href="#" class="cart-link__link">
+						<a href="#" class="cart-link__link" data-card-open>
 							<span>Go to checkout</span>
 							<img data-src="img/interface/menu-shevron.svg" data-inline-svg alt="shopping cart">
 						</a>
@@ -425,3 +425,43 @@
 		</div>
 	</div>
 </div>
+
+<div class="shopping-card" data-card>
+	<div class="shopping-card__content">
+		<div class="shopping-card__heading">
+			<span>Cart</span>
+			<img src="img/interface/close.svg" data-card-close alt="close">
+		</div>
+		<ul class="shopping-card__list">
+			<li class="card-item">
+				<button class="card-item__btn"><img data-src="img/interface/close.svg" data-inline-svg alt="remove"></button>
+				<img class="card-item__preview" src="img/32.png" alt="Steelwrist Tiltrotator X07">
+				<div class="card-item__body">
+					<h3>Steelwrist Tiltrotator X07</h3>
+					<span class="card-item__serial">s50 - 80l - 380/300 mm</span>
+					<div class="card-item__quantity">
+						<span>$ 3 610</span>
+						<div class="quantity">
+							<button type="button" class="quantity__button quantity__button_minus"></button>
+							<div class="quantity__input">
+								<input autocomplete="off" type="text" name="form[]" value="1" readonly>
+							</div>
+							<button type="button" class="quantity__button quantity__button_plus"></button>
+						</div>
+					</div>
+					<span class="card-item__price">$ 3 610</span>
+				</div>
+			</li>
+		</ul>
+		<div class="shopping-card__actions">
+			<div class="shopping-card__subtotal">
+				<span>Subtotal</span>
+				<span>$ 10 830</span>
+			</div>
+			<a class="button" href="#">Go to checkout</a>
+			<a class="button button_outlined" href="#">Continue Shopping</a>
+		</div>
+	</div>
+</div>
+
+<div class="page-overlay"></div>

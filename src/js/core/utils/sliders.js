@@ -127,6 +127,34 @@ function initSliders() {
 		})
 	}
 
+	if(document.querySelector('.product-slider')) {
+		const swiper = new Swiper(".product-slider__thumbs", {
+			spaceBetween: 12,
+			freeMode: true,
+			watchSlidesProgress: true,
+			slidesPerView: 6
+		});
+		const swiper2 = new Swiper(".product-slider__slider", {
+			navigation: {
+				nextEl: '.product-slider__next[data-slider-next="0"]',
+				prevEl: '.product-slider__prev[data-slider-prev="0"]',
+				disabledClass: '_disabled'
+			},
+			pagination: {
+				el: '.product-slider__pagging[data-slider-pagging="0"]',
+				type: 'bullets',
+				clickable: true
+			},
+			thumbs: {
+				swiper: swiper,
+			},
+		});
+		if(swiper.slides.length > 6) {
+			swiper.el.closest('.product-slider__bottom').classList.add('with-shadow');
+		} else {
+			swiper.el.closest('.product-slider__bottom').classList.remove('with-shadow');
+		}
+	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
