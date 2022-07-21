@@ -40,17 +40,77 @@
 				<li><a target="_blank" href="category.html">Category</a></li>
 				<li><a target="_blank" href="search.html">Search</a></li>
 				<li><a target="_blank" href="product.html">Product</a></li>
+				<li><a target="_blank" href="about.html">About</a></li>
+				<li><a target="_blank" href="blog.html">Blog</a></li>
+				<li><a target="_blank" href="guider.html">Guider</a></li>
+				<li><a target="_blank" href="rubber.html">Rubber</a></li>
+				<li><a target="_blank" href="faq.html">FAQ</a></li>
+				<li><a target="_blank" href="article.html">Article</a></li>
+				<li><a target="_blank" href="privacy-policy.html">Privacy Policy</a></li>
+				<li><a target="_blank" href="checkout-result.html">Checkout result</a></li>
+				<li><a target="_blank" href="404.html">404</a></li>
 			</ol>
-			<!-- <button>Popup</button> -->
+			<button>Popup</button>
 		</div>
+		@@include('html/_popup.htm',{})
 		@@include('html/_js.htm',{})
 		<script>
+			let bodyLockStatus = true;
+			let bodyLockToggle = (delay = 500) => {
+				if (document.documentElement.classList.contains('lock')) {
+					bodyUnlock(delay);
+				} else {
+					bodyLock(delay);
+				}
+			}
+			let bodyUnlock = (delay = 500) => {
+				let body = document.querySelector("body");
+				if (bodyLockStatus) {
+					let lock_padding = document.querySelectorAll("._lp");
+					setTimeout(() => {
+						for (let index = 0; index < lock_padding.length; index++) {
+							const el = lock_padding[index];
+							el.style.paddingRight = '0px';
+						}
+						body.style.paddingRight = '0px';
+						document.documentElement.classList.remove("lock");
+					}, delay);
+					bodyLockStatus = false;
+					setTimeout(function () {
+						bodyLockStatus = true;
+					}, delay);
+				}
+			}
+			let bodyLock = (delay = 500) => {
+				let body = document.querySelector("body");
+				if (bodyLockStatus) {
+					let lock_padding = document.querySelectorAll("._lp");
+					for (let index = 0; index < lock_padding.length; index++) {
+						const el = lock_padding[index];
+						el.style.paddingRight = window.innerWidth - document.querySelector('.rootpage').offsetWidth + 'px';
+					}
+					body.style.paddingRight = window.innerWidth - document.querySelector('.rootpage').offsetWidth + 'px';
+					document.documentElement.classList.add("lock");
+
+					bodyLockStatus = false;
+					setTimeout(function () {
+						bodyLockStatus = true;
+					}, delay);
+				}
+			}
+
 			const popup = {
 				open(selector) {
 					document.querySelector(selector).classList.add('_open');
+					if (bodyLockStatus) {
+						bodyLockToggle();
+					}
 				},
 				close(e, selector) {
 					e.target.closest(selector).closest('.popup').classList.remove('_open');
+					if (bodyLockStatus) {
+						bodyLockToggle();
+					}
 				}
 			};
 			const clickOnDocument = (e) => {

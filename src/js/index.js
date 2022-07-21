@@ -3,22 +3,30 @@ import './core/utils/inline-svg.js';
 import './core/utils/sliders.js';
 import './core/scroll/lazyload.js';
 import './core/forms/select.js';
-import { formFieldsInit, formSubmit, formQuantity } from './core/forms/forms.js';
-import { isTarget, spollers, removeClasses, _slideUp, bodyLockStatus, bodyLockToggle, tabs } from './core/utils/functions.js';
+import { formFieldsInit, formSubmit } from './core/forms/forms.js';
+import { isTarget, spollers, isWebp, _slideUp, bodyLockStatus, bodyLockToggle, tabs, bodyUnlock, bodyLock } from './core/utils/functions.js';
 
+const $html = document.documentElement;
 const $fixtips = document.querySelector('[data-fixtips]');
 const $anchor = document.querySelector('[data-anchor]');
 const $headerMenu = document.querySelector('[data-mobile-menu]');
 const $pageBurgerEl = document.querySelector('[data-burger]');
 const $filter = document.querySelector('[data-filter]');
 const $card = document.querySelector('[data-card]');
+const $popup = document.querySelector('.popup');
 
 export const popup = {
 	open (selector) {
 		document.querySelector(selector).classList.add('_open');
+		if (bodyLockStatus) {
+			bodyLock(0);
+		}
 	},
 	close (e, selector) {
 		e.target.closest(selector).closest('.popup').classList.remove('_open');
+		if (bodyLockStatus) {
+			bodyUnlock(0);
+		}
 	}
 };
 
@@ -90,12 +98,28 @@ const clickOnDocument = (e) => {
 
 	const $filterBtn = isTarget(targetElement, '[data-filter-btn]');
 	if ($filterBtn) {
+		if (bodyLockStatus) {
+			bodyLock();
+		}
 		$filter && $filter.classList.add('js-open');
 	}
 
 	const $filterClose = isTarget(targetElement, '[data-filter-close]');
 	if ($filterClose) {
+		if (bodyLockStatus) {
+			bodyUnlock();
+		}
 		$filter && $filter.classList.remove('js-open');
+	}
+
+	const $overlay = isTarget(targetElement, '.page-overlay');
+	if ($overlay) {
+		if (bodyLockStatus) {
+			bodyUnlock();
+		}
+
+		if($filter && $filter.classList.contains('js-open')) $filter.classList.remove('js-open');
+		if($card && $card.classList.contains('js-open')) $card.classList.remove('js-open');
 	}
 
 	const $quantityPlus = isTarget(targetElement, '.quantity__button_plus')
@@ -128,7 +152,7 @@ const clickOnDocument = (e) => {
 	if($cardOpenTrigger) {
 		$card && $card.classList.add('js-open');
 		if (bodyLockStatus) {
-			bodyLockToggle();
+			bodyLock();
 		}
 	}
 
@@ -136,8 +160,13 @@ const clickOnDocument = (e) => {
 	if($cardCloseTrigger) {
 		$card && $card.classList.remove('js-open');
 		if (bodyLockStatus) {
-			bodyLockToggle();
+			bodyUnlock();
 		}
+	}
+
+	const $popupTriggerOpen = isTarget(targetElement, '[data-popup-open]');
+	if($popupTriggerOpen) {
+		$popup && popup.open('.popup');
 	}
 };
 
@@ -219,14 +248,39 @@ const resetTransform = (e) => {
 	if ($parallaxBorder) $parallaxBorder.style.transform = '';
 };
 
+const replaceWebpBg = (backgrounds) => {
+	backgrounds.forEach(bg => {
+		
+		if (bg.hasAttribute('data-fallback-bg')) {
+			const intervalID = setInterval(checkWebp, 1000);
+
+			setTimeout(() => {
+				clearInterval(intervalID);
+			}, 5000);
+
+			function checkWebp () {
+				if ($html.classList.contains('webp') || $html.classList.contains('no-webp')) {
+					clearInterval(intervalID);
+					
+					if ($html.classList.contains('no-webp')) {
+						bg.style.backgroundImage = `url(${bg.dataset.fallbackBg})`;
+					}
+				}
+			}
+		}
+	});
+};
+
 const init = () => {
 	const $html = document.documentElement;
 	const $searchForm = document.querySelector('[data-search]');
 	const $parallaxItems = document.querySelectorAll('[data-parallax]');
 	const $quantities = document.querySelectorAll('.quantity');
+	const $webpBgs = document.querySelectorAll('[data-bg$=".webp"]');
 
 	$html.classList.add('loaded');
 	
+	isWebp();
 	spollers();
 	setCopyrightYear(document.querySelector('.js-copyright-year'));
 	formFieldsInit();
@@ -238,6 +292,9 @@ const init = () => {
 	}
 	if ($quantities) {
 		$quantities.forEach(quantity => quantity.classList.add('_disabled'));
+	}
+	if ($webpBgs.length) {
+		replaceWebpBg($webpBgs);
 	}
 
 	$parallaxItems.forEach(image => image.addEventListener('mousemove', setParallaxOnImage));

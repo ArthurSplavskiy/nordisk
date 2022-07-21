@@ -1,9 +1,85 @@
 <div class="popup popup-reset">
 	<div class="popup__content">
 		<div class="popup__close">
-			<img src="img/interface/close.svg" alt="close">
+			<img data-src="img/interface/close.svg" data-inline-svg alt="close">
 		</div>
-		<h2>Thanks</h2>
-		<a href="index.html" class="button">homepage</a>
+		<div class="popup__grid">
+			<div class="popup__form">
+				<h2>Contact me for more help</h2>
+				<form action="#" class="callback-form">
+					<fieldset class="callback-form__item">
+						<label>Name *</label>
+						<input type="text" name="name" placeholder="Enter your name" data-required>
+					</fieldset>
+					<fieldset class="callback-form__item">
+						<label>Email *</label>
+						<input type="text" name="email" placeholder="Enter your email" data-required="email">
+					</fieldset>
+					<fieldset class="callback-form__item">
+						<label>Phone number *</label>
+						<input type="text" name="phone" placeholder="+ ____-_____" data-required data-phone-mask>
+					</fieldset>
+					<fieldset class="callback-form__item">
+						<label>Best time to call? *</label>
+						<input type="text" name="time" placeholder="___:___" data-required data-time-mask>
+					</fieldset>
+					<fieldset class="callback-form__item callback-form__textarea">
+						<label>Comment</label>
+						<textarea name="textarea" placeholder="Enter your comment"></textarea>
+					</fieldset>
+					<button type="submit" class="button button_small">Possible notice</button>
+				</form>
+			</div>
+			<div class="popup__info">
+				<h3>Contact info</h3>
+				<ul class="popup__links-list">
+					<li>
+						<img data-src="img/interface/map-ic.svg" data-inline-svg alt="address">
+						<span>Nordisk Maskin AB
+							Stora Hällevad Slättvarva 6
+							583 94 Nykil</span>
+					</li>
+					<li>
+						<img data-src="img/interface/phone.svg" data-inline-svg alt="address">
+						<div>
+							<a href="tel:46700880000">46 700 880000</a>
+						</div>
+					</li>
+					<li>
+						<img data-src="img/interface/open-mail.svg" data-inline-svg alt="address">
+						<div>
+							<a href="mailto:info@nordiskmaskin.se">info@nordiskmaskin.se</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="popup__social-list">
+					<li>
+						<a href="https://facebook.com" target="_blank">
+							<img class="facebook-ic" data-src="img/interface/facebook-ic.svg" data-inline-svg alt="facebook">
+						</a>
+					</li>
+					<li>
+						<a href="https://telegram.com" target="_blank">
+							<img data-src="img/interface/telegram-ic.svg" data-inline-svg alt="telegram">
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com" target="_blank">
+							<img data-src="img/interface/twitter-ic.svg" data-inline-svg alt="twitter">
+						</a>
+					</li>
+					<li>
+						<a href="https://instagram.com" target="_blank">
+							<img data-src="img/interface/instagram-ic.svg" data-inline-svg alt="instagram">
+						</a>
+					</li>
+					<li>
+						<a href="https://linkedin.com" target="_blank">
+							<img data-src="img/interface/linkedin-ic.svg" data-inline-svg alt="linkedin">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>

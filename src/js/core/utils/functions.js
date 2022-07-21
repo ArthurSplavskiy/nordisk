@@ -573,7 +573,7 @@ export function setPhoneMask() {
 				//'+38(999) 999 9999'
 				//'+375(99)999-99-99'
 				phoneInput.classList.add('_mask');
-				Inputmask("+380 999 999 999", {
+				Inputmask("+9999 99999", {
 					showMaskOnHover: false,
 					clearIncomplete: true,
 					clearMaskOnLostFocus: true,
@@ -585,6 +585,34 @@ export function setPhoneMask() {
 
 				phoneInput.addEventListener('blur', () => {
 					phoneInput.placeholder = ''
+				})
+			}
+		})
+	}
+}
+
+export function setTimeMask() {
+	const timeInputs = document.querySelectorAll('input[data-time-mask]');
+
+	if(timeInputs) {
+		timeInputs.forEach(timeInput => {
+			if (timeInput) {
+				//'+7(999) 999 9999'
+				//'+38(999) 999 9999'
+				//'+375(99)999-99-99'
+				timeInput.classList.add('_mask');
+				Inputmask("99:99", {
+					showMaskOnHover: false,
+					clearIncomplete: true,
+					clearMaskOnLostFocus: true,
+					onincomplete: function () {
+						timeInput.inputmask.remove();
+						timeInput.value = ''
+					}
+				}).mask(timeInput);
+
+				timeInput.addEventListener('blur', () => {
+					timeInput.placeholder = ''
 				})
 			}
 		})

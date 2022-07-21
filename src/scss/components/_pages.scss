@@ -20,4 +20,17 @@
 			}
 		}
 	}
+	&_blog {
+		.article-slider {
+			padding-top: 0;
+		}
+	}
+	&_faq {
+		.blog-aside {
+			padding-left: 70px;
+			@media (max-width: $tablet) {
+				display: none;
+			}
+		}
+	}
 }

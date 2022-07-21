@@ -1,38 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('html/_head.htm',{
-	"title":"Nordisk Maskin - 404"
+"title":"Nordisk Maskin"
 })
+
 <body>
 	@@include('html/_preloader-markup.htm',{})
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
-		<main class="page page_404">
-			<nav class="breadcrumbs">
-				<div class="breadcrumbs__container">
-					<div class="breadcrumbs__content">
-						<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
-							<li itemscope itemtype="http://schema.org/ListItem">
-								<a class="breadcrumbs__link" itemprop="item" href="index.html">
-									<img src="img/interface/home.svg" alt="home">
-								</a>
-								<meta itemprop="position" content="1" />
-							</li>
-							<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-								<span class="breadcrumbs__link" itemprop="name">404</span>
-								<meta itemprop="position" content="2" />
-							</li>
-						</ul>
+		<main class="page page_tech">
+			<div class="tech-text tech-text_404">
+				<div class="tech-text__content">
+					<img src="img/interface/tech-2.svg" alt="tech">
+					<div>
+						<span>Error 404</span>
+						<h1>Page not found</h1>
+						<p>An error was made while entering the address or the page does not exist</p>
+						<a class="button button_small" href="index.html">Go to home page</a>
 					</div>
 				</div>
-			</nav>
-			<div class="notfound__container">
-				<h1>404</h1>
-				<a href="index.html" class="button">homepage</a>
 			</div>
+			<section class="s-slider article-slider">
+				<div class="s-slider__container">
+					<div class="s-slider__content article-slider__content">
+						<div class="article-slider__top">
+							<h2 class="s-slider__heading">Products viewed</h2>
+							<div class="s-slider__navigation" data-da=".article-slider__content, 768, last">
+								<div class="s-slider__prev" data-slider-prev="0">
+									<img data-src="img/interface/menu-shevron.svg" data-inline-svg alt="prev">
+								</div>
+								<div class="s-slider__next" data-slider-next="0">
+									<img data-src="img/interface/menu-shevron.svg" data-inline-svg alt="next">
+								</div>
+							</div>
+						</div>
+						<div data-slider-id="0" class="s-slider__slider">
+							<div class="s-slider__swiper">
+								<div class="s-slider__slide">
+									<div class="product-card">
+										<div class="product-card__content">
+											<div class="product-card__tag">-4%</div>
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/30.png" class="swiper-lazy" alt="Steelwrist Tiltrotator X07">
+												<div class="swiper-lazy-preloader"></div>
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Rototilt</span>
+												<a href="product.html" class="product-card__title">Steelwrist Tiltrotator X07</a>
+												<div class="product-card__price">
+													<span class="product-card__old">$ 400,00</span>
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="s-slider__slide">
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/31.png" class="swiper-lazy" alt="Engcon - Ground vibrator">
+												<div class="swiper-lazy-preloader"></div>
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="s-slider__slide">
+									<div class="product-card">
+										<div class="product-card__content">
+											<div class="product-card__tag">-4%</div>
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/32.png" class="swiper-lazy" alt="Steelwrist Tiltrotator X07">
+												<div class="swiper-lazy-preloader"></div>
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Rototilt</span>
+												<a href="product.html" class="product-card__title">Steelwrist Tiltrotator X07</a>
+												<div class="product-card__price">
+													<span class="product-card__old">$ 400,00</span>
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="s-slider__slide">
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/33.png" class="swiper-lazy" alt="Engcon - Ground vibrator">
+												<div class="swiper-lazy-preloader"></div>
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="s-slider__slide">
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/34.png" class="swiper-lazy" alt="Engcon - Ground vibrator">
+												<div class="swiper-lazy-preloader"></div>
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="s-slider__slide">
+									<div class="product-card">
+										<div class="product-card__content">
+											<div class="product-card__tag">-4%</div>
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/35.png" class="swiper-lazy" alt="Steelwrist Tiltrotator X07">
+												<div class="swiper-lazy-preloader"></div>
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Rototilt</span>
+												<a href="product.html" class="product-card__title">Steelwrist Tiltrotator X07</a>
+												<div class="product-card__price">
+													<span class="product-card__old">$ 400,00</span>
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="s-slider__slide">
+									<div class="product-card">
+										<div class="product-card__content">
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/36.png" class="swiper-lazy" alt="Engcon - Ground vibrator">
+												<div class="swiper-lazy-preloader"></div>
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Tools</span>
+												<a href="product.html" class="product-card__title">Engcon - Ground vibrator</a>
+												<div class="product-card__price">
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="s-slider__slide">
+									<div class="product-card">
+										<div class="product-card__content">
+											<div class="product-card__tag">-4%</div>
+											<a href="product.html" class="product-card__image-ibg">
+												<img data-src="img/29.png" class="swiper-lazy" alt="Steelwrist Tiltrotator X07">
+												<div class="swiper-lazy-preloader"></div>
+											</a>
+											<div class="product-card__text">
+												<span class="product-card__category">Rototilt</span>
+												<a href="product.html" class="product-card__title">Steelwrist Tiltrotator X07</a>
+												<div class="product-card__price">
+													<span class="product-card__old">$ 400,00</span>
+													<span class="product-card__current">$ 375,00</span>
+													<p class="product-card__credit">$188 / month</p>
+												</div>
+											</div>
+											<a href="#" class="button button_small">Add to cart</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="s-slider__pagination" data-slider-pagination="0"></div>
+					</div>
+				</div>
+			</section>
 		</main>
+		@@include('html/_fixtip.htm',{})
 		@@include('html/_footer.htm',{})
 		@@include('html/_js.htm',{})
 	</div>
 </body>
+
 </html>

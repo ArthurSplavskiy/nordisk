@@ -69,18 +69,6 @@
 											</ul>
 										</div>
 									</div>
-									<div class="spollers__item">
-										<button type="button" data-spoller class="spollers__title">Material</button>
-										<div class="spollers__body"></div>
-									</div>
-									<div class="spollers__item">
-										<button type="button" data-spoller class="spollers__title">Size</button>
-										<div class="spollers__body"></div>
-									</div>
-									<div class="spollers__item">
-										<button type="button" data-spoller class="spollers__title">Price</button>
-										<div class="spollers__body"></div>
-									</div>
 								</div>
 							</aside>
 							<div class="products-layout__body">
@@ -152,7 +140,7 @@
 										<h3>Stump cutter</h3>
 									</a>
 								</div>
-								<a href="#" class="button button_contact">Contact us</a>
+								<a href="#" class="button button_contact" data-popup-open>Contact us</a>
 								<section class="s-text">
 									<div class="s-text__content">
 										<h2>Title H2</h2>
@@ -182,6 +170,7 @@
 					</div>
 				</div>
 			</main>
+			@@include('html/_popup.htm',{})
 			@@include('html/_fixtip.htm',{})
 			@@include('html/_footer.htm',{})
 			@@include('html/_js.htm',{})

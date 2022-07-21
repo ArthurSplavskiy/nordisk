@@ -1,6 +1,6 @@
 // Импорт функционала ==============================================================================================================================================================================================================================================================================================================================
 // Вспомогательные функции
-import { _slideUp, _slideDown, _slideToggle, setPhoneMask, setDateMask } from "../utils/functions.js";
+import { _slideUp, _slideDown, _slideToggle, setPhoneMask, setDateMask, setTimeMask } from "../utils/functions.js";
 import { popup } from "../../index.js";
 // Модуль попапа
 // import { popupItem } from "../utils/popups.js";
@@ -21,8 +21,9 @@ data-required="email" - вадидация E-mail
 export function formFieldsInit() {
 	const formFields = document.querySelectorAll('input[placeholder],textarea[placeholder]');
 
-	setPhoneMask()
-	setDateMask()
+	setPhoneMask();
+	setDateMask();
+	setTimeMask();
 	//setFloatLabels()
 	//setFileInputs()
 
