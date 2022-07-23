@@ -257,6 +257,9 @@ export function formSubmit(validate) {
 						// Нужно подключить зависимость
 						popup.open(`${message}`);
 					}
+					if(form.querySelector('[data-form-message]')) {
+						form.querySelector('[data-form-message]').classList.add('_show');
+					}
 					formValidate.formClean(form);
 				} else {
 					alert("Ошибка");
@@ -269,6 +272,9 @@ export function formSubmit(validate) {
 				if (message) {
 					// Нужно подключить зависимость
 					popup.open(`${message}`);
+				}
+				if(form.querySelector('[data-form-message]')) {
+					form.querySelector('[data-form-message]').classList.add('_show');
 				}
 				formValidate.formClean(form);
 			}

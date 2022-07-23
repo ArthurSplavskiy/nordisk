@@ -25,12 +25,17 @@
 			padding-top: 0;
 		}
 	}
-	&_faq {
+	&_faq, &_contact {
 		.blog-aside {
 			padding-left: 70px;
 			@media (max-width: $tablet) {
 				display: none;
 			}
+		}
+	}
+	&_contact {
+		.blog-aside {
+			padding-top: 100px;
 		}
 	}
 }

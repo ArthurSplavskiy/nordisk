@@ -18,7 +18,7 @@ function initMap(n = 1) {
 		//pixelOffset: new google.maps.Size(-230,250)
 	});
 	var locations = [
-		[new google.maps.LatLng(53.819055, 27.8813694)],
+		[new google.maps.LatLng(59.3895139, 15.7534716)],
 		[new google.maps.LatLng(53.700055, 27.5513694)],
 		[new google.maps.LatLng(53.809055, 27.5813694)],
 		[new google.maps.LatLng(53.859055, 27.5013694)],
@@ -28,13 +28,13 @@ function initMap(n = 1) {
 		panControl: false,
 		mapTypeControl: false,
 		center: locations[0][0],
-		styles: [{ "featureType": "landscape.natural", "elementType": "geometry.fill", "stylers": [{ "visibility": "on" }, { "color": "#e0efef" }] }, { "featureType": "poi", "elementType": "geometry.fill", "stylers": [{ "visibility": "on" }, { "hue": "#1900ff" }, { "color": "#c0e8e8" }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "lightness": 100 }, { "visibility": "simplified" }] }, { "featureType": "road", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "visibility": "on" }, { "lightness": 700 }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#7dcdcd" }] }],
+		//styles: [{ "featureType": "landscape.natural", "elementType": "geometry.fill", "stylers": [{ "visibility": "on" }, { "color": "#e0efef" }] }, { "featureType": "poi", "elementType": "geometry.fill", "stylers": [{ "visibility": "on" }, { "hue": "#1900ff" }, { "color": "#c0e8e8" }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "lightness": 100 }, { "visibility": "simplified" }] }, { "featureType": "road", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "visibility": "on" }, { "lightness": 700 }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#7dcdcd" }] }],
 		scrollwheel: false,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	var map = new google.maps.Map(document.getElementById('map'), options);
 	var icon = {
-		url: 'img/interface/map-marker-ico.svg',
+		url: 'img/interface/map-marker.png',
 		scaledSize: new google.maps.Size(18, 20),
 		anchor: new google.maps.Point(9, 10)
 	}
@@ -69,7 +69,7 @@ function initMap(n = 1) {
 	}
 }
 function mapAdd() {
-    const API_KEY = 'AIzaSyDXAw45Va1r3T6QDLaPFnL_r2EqdPQ7KW0'
+    const API_KEY = 'AIzaSyBLf6DB5YHPLxaRJqi-tAIvPY7aQGseDfo'
 	let tag = document.createElement('script');
     tag.async = true
     tag.defer = true

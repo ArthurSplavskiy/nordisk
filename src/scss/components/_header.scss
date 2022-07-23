@@ -167,6 +167,7 @@
 		left: 0;
 		top: 99%;
 		opacity: 0;
+		display: none;
 		@media(max-width: $tablet) {
 			display: none;
 		}
@@ -178,6 +179,9 @@
 			opacity: 1;
 			transform: translateY(0);
 			z-index: 3;
+		}
+		&:after {
+			display: block;
 		}
 	}
 

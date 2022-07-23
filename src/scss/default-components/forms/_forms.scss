@@ -481,7 +481,6 @@
 	max-width: 357px;
 	display: grid;
 	grid-template-columns: 1fr minmax(80px, 120px);
-	position: relative;
 	input {
 		height: 45px;
 		width: 100%;
@@ -506,6 +505,44 @@
 		left: 5px;
 		font-size: 12px;
 		line-height: 100%;
+	}
+	&__message {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #E2F3FD;
+		opacity: 0;
+		pointer-events: none;
+		visibility: hidden;
+		transition: $defaultTransition;
+		padding: 14px;
+
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 22px;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 30px;
+		text-align: center;
+		color: #171717;
+
+		@media (min-width: $mobile) {
+			gap: 10px;
+		}
+
+		img {
+			width: 36px;
+			align-self: flex-end;
+			justify-self: center;
+		}
+		
+		&._show {
+			opacity: 1;
+			pointer-events: all;
+			visibility: visible;
+		}
 	}
 }
 

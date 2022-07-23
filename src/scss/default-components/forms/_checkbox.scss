@@ -30,6 +30,14 @@
 		}
 	}
 
+	&__text {
+		&._error {
+			.icon-check {
+				border-color: $red!important;
+			}
+		}
+	}
+
 	&__input {
 		position: absolute;
 		width: 0;

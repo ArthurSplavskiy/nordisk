@@ -3,8 +3,10 @@ import './core/utils/inline-svg.js';
 import './core/utils/sliders.js';
 import './core/scroll/lazyload.js';
 import './core/forms/select.js';
+import './core/utils/map.js';
 import { formFieldsInit, formSubmit } from './core/forms/forms.js';
 import { isTarget, spollers, isWebp, _slideUp, bodyLockStatus, bodyLockToggle, tabs, bodyUnlock, bodyLock } from './core/utils/functions.js';
+import { gotoBlock } from './core/scroll/gotoblock.js';
 
 const $html = document.documentElement;
 const $fixtips = document.querySelector('[data-fixtips]');
@@ -14,6 +16,7 @@ const $pageBurgerEl = document.querySelector('[data-burger]');
 const $filter = document.querySelector('[data-filter]');
 const $card = document.querySelector('[data-card]');
 const $popup = document.querySelector('.popup');
+const $cookies = document.querySelector('[data-cookies]');
 
 export const popup = {
 	open (selector) {
@@ -90,10 +93,7 @@ const clickOnDocument = (e) => {
 
 	const $anchor = isTarget(targetElement, '[data-anchor]');
 	if ($anchor) {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth'
-		})
+		gotoBlock('.header');
 	}
 
 	const $filterBtn = isTarget(targetElement, '[data-filter-btn]');
@@ -167,6 +167,17 @@ const clickOnDocument = (e) => {
 	const $popupTriggerOpen = isTarget(targetElement, '[data-popup-open]');
 	if($popupTriggerOpen) {
 		$popup && popup.open('.popup');
+	}
+
+	const $closeCookies = isTarget(targetElement, '[data-cookies-close]');
+	if ($closeCookies) {
+		if ($cookies) $cookies.style.display = 'none';
+		localStorage.setItem('cookies-banner', 'off');
+	}
+
+	const $productHeading = isTarget(targetElement, '[data-product-anchor]');
+	if ($productHeading) {
+		gotoBlock('[data-product-descr]');
 	}
 };
 
@@ -248,6 +259,13 @@ const resetTransform = (e) => {
 	if ($parallaxBorder) $parallaxBorder.style.transform = '';
 };
 
+const showCookiesBanner = (banner) => {
+	const bannerStatus = localStorage.getItem('cookies-banner');
+	if (bannerStatus === 'off') {
+		banner.style.display = 'none';
+	}
+};
+
 const replaceWebpBg = (backgrounds) => {
 	backgrounds.forEach(bg => {
 		
@@ -295,6 +313,9 @@ const init = () => {
 	}
 	if ($webpBgs.length) {
 		replaceWebpBg($webpBgs);
+	}
+	if ($cookies) {
+		showCookiesBanner($cookies);
 	}
 
 	$parallaxItems.forEach(image => image.addEventListener('mousemove', setParallaxOnImage));

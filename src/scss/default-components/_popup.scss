@@ -36,7 +36,7 @@
 		max-width: 800px;
 		position: relative;
 		overflow: hidden;
-		transition: all 0.8s ease;
+		transition: all 0.5s ease;
 		transform: scale(0);
 		@media (min-width: $tablet) {
 			margin: 100px auto 0 auto;
@@ -154,6 +154,9 @@
 			position: relative;
 			z-index: 2;
 			vertical-align: middle;
+			@media (max-width: $mobile) {
+				transform: scale(1.4);
+			}
 		}
 		.facebook-ic {
 			width: 10px;

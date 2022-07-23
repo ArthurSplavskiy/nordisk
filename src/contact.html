@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+		"title":"Nordisk Maskin"
+	})
+	<body>
+		@@include('html/_preloader-markup.htm',{})
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page page_contact">
+				<div class="bredcrumbs__container">
+					<nav class="breadcrumbs">
+						<ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+							<li itemscope itemtype="http://schema.org/ListItem">
+								<a class="breadcrumbs__link" itemprop="item" href="index.html">
+									<img src="img/interface/home-ico.svg" alt="home">
+								</a>
+								<meta itemprop="position" content="1" />
+							</li>
+							<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								<span class="breadcrumbs__link" itemprop="name">Contact Us</span>
+								<meta itemprop="position" content="2" />
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="blog-layout">
+					<div class="blog-layout__container">
+						<div class="blog-layout__content">
+							<nav class="blog-layout__nav blog-nav">
+								<ul class="blog-nav__list">
+									<li>
+										<a href="blog.html">Blog</a>
+									</li>
+									<li>
+										<a href="rubber.html">Rubber caterpillars</a>
+									</li>
+									<li>
+										<a href="guider.html">Guider</a>
+									</li>
+									<li>
+										<a href="faq.html">FAQ</a>
+									</li>
+									<li>
+										<a href="about.html">About Us</a>
+									</li>
+									<li>
+										<a class="_active" href="contact.html">Contact Us</a>
+									</li>
+									<li>
+										<a href="privacy-policy.html">Privacy policy</a>
+									</li>
+								</ul>
+							</nav>
+							<section class="blog-layout__main blog-main">
+								<h1 class="blog-main__title">Contact Us</h1>
+								<div id="map"></div>
+								<div class="contact">
+									<div class="contact__form">
+										<span>Do you still need help?</span>
+										<h2>Contact Us</h2>
+										<form action="#" class="callback-form" data-test>
+											<fieldset class="callback-form__item">
+												<label>First name *</label>
+												<input type="text" name="name" placeholder="Enter your first name" data-required>
+											</fieldset>
+											<fieldset class="callback-form__item">
+												<label>Last name</label>
+												<input type="text" name="lastname" placeholder="Enter your last name">
+											</fieldset>
+											<fieldset class="callback-form__item callback-form__email">
+												<label>E-mail *</label>
+												<input type="text" name="email" placeholder="Enter your answer" data-required="email">
+											</fieldset>
+											<fieldset class="callback-form__item callback-form__textarea">
+												<label>Message *</label>
+												<textarea name="textarea" placeholder="Enter your answer" data-required></textarea>
+											</fieldset>
+											<div class="checkbox">
+												<label class="checkbox__text">
+													<input checked type="checkbox" name="agreement" class="checkbox__input" data-required />
+													<div class="icon-check"></div>
+													<span>I consent to the processing of <a href="privacy-policy.html">personal data</a></span>
+												</label>
+											</div>
+											<fieldset class="callback-form__item callback-form__action">
+												<button type="submit" class="button">Submit</button>
+											</fieldset>
+											<div class="contact__message" data-form-message>
+												<div>
+													<img src="img/interface/status-ok.svg" alt="ok">
+													<span>Great</span>
+												</div>
+												<span>We will contact you shortly</span>
+											</div>
+										</form>
+									</div>
+								</div>
+							</section>
+							<aside class="blog-layout__aside blog-aside">
+								<h2 class="blog-aside__title">Contact info</h2>
+								<ul class="blog-aside__info">
+									<li>
+										<img data-src="img/interface/map-ic.svg" data-inline-svg alt="address">
+										<span>Nordisk Maskin AB
+										Stora Hällevad Slättvarva 6
+										583 94 Nykil</span>
+									</li>
+									<li>
+										<img data-src="img/interface/phone.svg" data-inline-svg alt="address">
+										<div>
+											<a href="tel:46700880000">46 700 880000</a>
+										</div>
+									</li>
+									<li>
+										<img data-src="img/interface/open-mail.svg" data-inline-svg alt="address">
+										<div>
+											<a href="mailto:info@nordiskmaskin.se">info@nordiskmaskin.se</a>
+										</div>
+									</li>
+								</ul>
+								<img src="img/interface/contact-decor.svg" alt="decor" class="contact__decor">
+							</aside>
+						</div>
+					</div>
+				</div>
+			</main>
+			@@include('html/_fixtip.htm',{})
+			@@include('html/_footer.htm',{})
+			@@include('html/_js.htm',{})
+		</div>
+	</body>
+</html>

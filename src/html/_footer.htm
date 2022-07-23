@@ -3,9 +3,13 @@
 		<div class="footer__container">
 			<div class="footer__subscribe">
 				<strong>Subscribe to our newsletter</strong>
-				<form action="#" class="subscribe-form">
-					<input type="text" placeholder="Enter your email" data-required="email">
+				<form action="#" class="subscribe-form" data-test>
+					<input type="text" name="email" placeholder="Enter your email" data-required="email">
 					<button type="submit" class="button">Subscribe</button>
+					<div class="subscribe-form__message" data-form-message>
+						<img src="img/interface/green-check.svg" alt="ok">
+						<p>You have successfully subscribed</p>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -63,7 +67,7 @@
 					<div class="footer__links-title">Support</div>
 					<ul class="footer__links-list">
 						<li>
-							<a href="#">Terms of purchase</a>
+							<a href="privacy-policy.html">Terms of purchase</a>
 						</li>
 						<li>
 							<a href="privacy-policy.html">Privacy Policy</a>
